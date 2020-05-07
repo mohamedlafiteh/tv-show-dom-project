@@ -34,22 +34,31 @@ function makePageForEpisodes(episodeList) {
   return rootElem;
 }
 
-function myFunction() {
-  var input, filter, ul, li, a, i, txtValue;
-  input = document.getElementById("myInput");
+var filter, main, container, title, text, i, txtValue, pValue;
+var input = document.getElementById("myInput");
+input.addEventListener("keyup", function myFunction() {
   filter = input.value.toUpperCase();
-  ul = document.getElementById("myUL");
-  li = ul.getElementsByTagName("li");
-  for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("a")[0];
-    txtValue = a.textContent || a.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
+  console.log(filter);
+  main = document.getElementById("root");
+
+  container = main.getElementsByTagName("div");
+
+  for (i = 0; i < container.length; i++) {
+    title = container[i].getElementsByTagName("h4")[0];
+    text = container[i].getElementsByTagName("p")[0];
+
+    txtValue = title.textContent || title.innerText;
+    pValue = text.textContent || text.innerText;
+    if (
+      txtValue.toUpperCase().indexOf(filter) > -1 ||
+      pValue.toUpperCase().indexOf(filter) > -1
+    ) {
+      container[i].style.display = "";
     } else {
-      li[i].style.display = "none";
+      container[i].style.display = "none";
     }
   }
-}
+});
 
 const episodeFormat = function(es) {
   let number = Number(es);
