@@ -1,3 +1,50 @@
+body {
+  padding: 16px;
+  background: #c8c8c8;
+}
+.page-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 #root {
-  color: red;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  margin-left: 100px;
+  margin-top: 60px;
+}
+
+.container {
+  height: 260px;
+  width: 260px;
+  background: white;
+  border-radius: 8px;
+}
+
+.title {
+  color: black;
+  background-color: #dcdcdc;
+  text-align: center;
+  border: solid black 1px;
+  border-width: 10px;
+  border-color: #dcdcdc;
+}
+.image {
+  width: 90px;
+  height: 90px;
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-bottom: 0px;
+}
+
+.text {
+  color: black;
+  float: left;
+  margin-left: 8px;
+  margin-right: 3px;
+  margin-top: -5px;
 }
